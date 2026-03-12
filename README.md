@@ -1,6 +1,10 @@
 # nubra_flexi_payload
 
-Build Nubra flexi basket payloads from grouped option strategy input.
+`nubra_flexi_payload` is a small builder for dynamic Nubra flexi basket payloads.
+
+The goal is to let a user define multi-leg option strategies in a simple format, resolve the correct instruments from the instrument master, calculate quantities from lot sizes, and generate a ready-to-send `trade.flexi_order(...)` payload without doing the repetitive symbol, expiry, quantity, and pricing calculations manually.
+
+It is designed for flexible strategy construction across different underlyings and exchanges, while keeping Nubra SDK initialization outside the package. The package also builds an aggressive basket limit price so the flexi basket behaves like a marketable order and gets placed seamlessly.
 
 ## Install
 
@@ -13,6 +17,15 @@ pip install nubra-flexi-payload
 - `build_option_strategy(...)`
 - `build_flexi_payload(...)`
 - `quote_fetcher_factory(md_instance)`
+
+## What It Handles
+
+- Build grouped strategy input from a single underlying and multiple option legs
+- Resolve correct option instruments from a preloaded instrument master
+- Support relative expiry inputs like `week0`, `week1`, `week2`, `week3`, and `month`
+- Calculate per-leg quantity from instrument lot size and requested lots
+- Build the final `trade.flexi_order(...)` payload
+- Set an aggressive basket limit price so the flexi order gets placed without extra strategy-premium calculations from the user
 
 ## Usage
 

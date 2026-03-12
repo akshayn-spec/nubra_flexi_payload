@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nubra_flexi_payload"
-version = "0.1.1"
-description = "Build Nubra flexi basket payloads from grouped option legs"
+version = "0.1.2"
+description = "Build dynamic Nubra flexi basket payloads for multi-leg option strategies with aggressive auto-priced limits"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
