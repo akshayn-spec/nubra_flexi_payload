@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nubra_flexi_payload"
-version = "0.1.0"
+version = "0.1.1"
 description = "Build Nubra flexi basket payloads from grouped option legs"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -15,4 +15,4 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/akshayn-spec/nubra-flexi-payload"
+Homepage = "https://github.com/akshayn-spec/nubra_flexi_payload"
